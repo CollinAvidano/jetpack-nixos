@@ -91,7 +91,7 @@ in
       message = "Docker version < 25 does not support CDI";
     }];
 
-    nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
+    nixpkgs.hostPlatform = lib.mkOverride 1010 "aarch64-linux";
 
     nixpkgs.overlays = [
       (import ../overlay.nix)
